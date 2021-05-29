@@ -108,7 +108,7 @@ class UserController extends Controller
 		$title = $request->input('title');
 
 		foreach ($tokens as $token) {
-			$notification->sendmessage($token,$message,$title);
+			$notification->sendmessage($title,$message,$token);
 		}
 
 		return array('success'=>true);
