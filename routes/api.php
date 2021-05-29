@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/image/upload','UserController@uploadimage');
 Route::post('/video/upload','UserController@uploadvideo');
 Route::post('/payment','UserController@payment');
+Route::post('/notification/send','UserController@sendnotification');
 
 
 

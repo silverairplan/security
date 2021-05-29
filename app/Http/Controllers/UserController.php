@@ -22,8 +22,6 @@ class UserController extends Controller
 
 	}
 
-		
-
 	public function uploadimage(Request $request)
 	{
 		$profile = $request->file('profile');		
@@ -101,6 +99,19 @@ class UserController extends Controller
 		{
 			return array('success'=>false,'message'=>$e->getMessage());
 		}		
+	}
+
+	public function sendnotification(Request $request,NotificationService $notification)
+	{
+		$tokens = $request->input('token');
+		$message = $request->input('message');	
+		$title = $request->input('title');
+
+		foreach ($tokens as $token) {
+			$notification->sendmessage($token,$message,$title);
+		}
+
+		return array('success'=>true);
 	}
 
 }
