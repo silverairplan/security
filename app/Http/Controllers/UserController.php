@@ -74,7 +74,7 @@ class UserController extends Controller
 					'card'=>$token,
 					'currency'=>'USD',
 					'amount'=>$amount,
-					'description'=>$username . ' has paid for ' . $memebership
+					'description'=>$username . ' has paid for ' . $membership
 				]);
 
 				if($charge['status'] == 'succeeded')
